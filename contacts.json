@@ -1,0 +1,9 @@
+[
+    {
+        "_comment": "NOTE: This is demo data. You can view, update, or delete this contact.",
+        "name": "Rahul Sharma",
+        "email": "rahul@example.com",
+        "phone": "987-654-3210",
+        "address": "Delhi, India"
+    }
+]
