@@ -1,7 +1,7 @@
 # main.py
 # This is the main file that runs the program.
 
-from services import ContactService
+from contact_manager.services import ContactService
 
 
 def main():

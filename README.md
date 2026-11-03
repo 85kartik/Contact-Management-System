@@ -46,18 +46,18 @@ The application follows a modular structure where each file has a specific respo
 ```mermaid
 flowchart TD
     A["👤 User"] --> B["main.py<br/>Main Menu"]
-    B --> C["services.py<br/>ContactService"]
-    C --> D["models.py<br/>Contact Class"]
-    C --> E["utils.py<br/>Validation & Formatting"]
+    B --> C["contact_manager/services.py<br/>ContactService"]
+    C --> D["contact_manager/models.py<br/>Contact Class"]
+    C --> E["contact_manager/utils.py<br/>Validation & Formatting"]
     C <--> F[("contacts.json<br/>Data Storage")]
 ```
 
 ### How It Works
 
 1. The user interacts with the application through `main.py`.
-2. The main file calls methods from `services.py`.
-3. The Contact class in `models.py` manages contact information.
-4. The utility functions in `utils.py` validate and format user input.
+2. The main file calls methods from `contact_manager.services`.
+3. The Contact class in `contact_manager/models.py` validates and manages contact information.
+4. The utility functions in `contact_manager/utils.py` validate and format user input.
 5. The `contacts.json` file stores contact information permanently.
 
 ---
@@ -65,25 +65,31 @@ flowchart TD
 ## 📁 Project Folder Structure
 
 ```text
-contact_manager/
+Contact-Management-System/
 │
-├── models.py          # Contact class and contact data
-├── services.py        # Add, search, update and delete operations
-├── utils.py           # Email validation and phone formatting
-├── main.py            # Main program and menu
-├── contacts.json      # Permanent contact storage
-└── README.md          # Project documentation
+├── contact_manager/
+│   ├── __init__.py        # Package initialization file
+│   ├── models.py          # Contact class and validation logic
+│   ├── services.py        # Add, search, update, delete operations & JSON storage
+│   └── utils.py           # Email validation and phone formatting functions
+│
+├── main.py                # Main program entry point and menu
+├── contacts.json          # Permanent contact storage file
+├── .gitignore             # Git ignore file
+└── README.md              # Project documentation
 ```
 
 ### 📋 File Responsibilities
 
 | File | Responsibility |
 |---|---|
-| `models.py` | Defines the Contact class and its attributes. |
-| `services.py` | Handles contact management operations and JSON storage. |
-| `utils.py` | Contains reusable validation and formatting functions. |
+| `contact_manager/__init__.py` | Marks directory as a Python package for clean imports. |
+| `contact_manager/models.py` | Defines the Contact class with email & phone validation. |
+| `contact_manager/services.py` | Handles contact management operations and robust JSON storage. |
+| `contact_manager/utils.py` | Contains reusable validation and formatting functions. |
 | `main.py` | Provides the interactive command-line interface. |
 | `contacts.json` | Stores contact information permanently. |
+| `.gitignore` | Prevents virtual environments, cache, and sensitive files from being tracked. |
 
 ---
 
@@ -205,13 +211,13 @@ This project demonstrates important Python programming concepts.
 ### Step 1: Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/85kartik/Contact-Management-System.git
 ```
 
 ### Step 2: Open the Project Folder
 
 ```bash
-cd contact_manager
+cd Contact-Management-System
 ```
 
 ### Step 3: Run the Application
